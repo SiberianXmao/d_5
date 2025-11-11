@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск книг - Google Books API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Поиск книг</h1>
+            <p>Найдите любую книгу через Google Books API</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-form">
+                <input type="text" id="searchInput" placeholder="Введите название книги, автора или ключевые слова...">
+                <select id="categoryFilter">
+                    <option value="">Все категории</option>
+                    <option value="fiction">Художественная литература</option>
+                    <option value="science">Наука</option>
+                    <option value="computers">Компьютеры</option>
+                    <option value="history">История</option>
+                    <option value="biography">Биографии</option>
+                </select>
+                <button id="searchBtn">Найти книги</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Ищем книги...</p>
+        </div>
+
+        <div id="errorMessage" class="error hidden">
+            <p>Произошла ошибка при поиске. Попробуйте еще раз.</p>
+        </div>
+
+        <div id="resultsInfo" class="results-info hidden">
+            <p>Найдено книг: <span id="totalResults">0</span></p>
+        </div>
+
+        <div id="booksContainer" class="books-container">
+            <!-- Книги будут загружаться сюда -->
+        </div>
+
+        <div id="loadMoreContainer" class="load-more hidden">
+            <button id="loadMoreBtn">Загрузить еще</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
